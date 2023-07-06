@@ -297,5 +297,18 @@
         });
       </script>
       <script> AOS.init(); </script>
+      <script>
+        window.watsonAssistantChatOptions = {
+          integrationID: "3afdaa14-5681-4da6-9626-45366c3136e1", // The ID of this integration.
+          region: "us-south", // The region your integration is hosted in.
+          serviceInstanceID: "655a5e0b-9e27-4f8b-acff-7fde4030ec44", // The ID of your service instance.
+          onLoad: function(instance) { instance.render(); }
+        };
+        setTimeout(function(){
+          const t=document.createElement('script');
+          t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+          document.head.appendChild(t);
+        });
+      </script>
     </body>
   </html>
